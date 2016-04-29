@@ -1,0 +1,139 @@
+ <script type="text/html" id="main">
+    <div id="template_container" temp="3" class="col-xs-12 tool-container-no-bottom container-selected col-sm-6 col-md-6 col-lg-4">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="lg_txt lg_r3_zc login-float-right">
+                    <span><a id="register" onclick="register();" style="color:#83C05E">注册</a></span>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="login-margin-bottom text-center">
+                    <img src="img/logo.png">
+                </div>
+            </div>
+        </div>
+        <div class="row lg_rowclass">
+            <div class="col-xs-2">
+                <div style="margin:1.5rem 0 1.5rem 1rem;">
+                    <img src="img/phone.png" height="26">
+                </div>
+            </div>
+            <div class="col-xs-10">
+                <div class="lg_txt">
+                    <input type="text" class="form-control login-clearBorder" placeholder="请输入您的手机号码" id="username" name="username" style="box-shadow:none;">
+                </div>
+            </div>
+        </div>
+        <div class="row lg_rowclass">
+            <div class="col-xs-2">
+                <div style="margin:1.5rem 0 1.5rem 1rem;">
+                    <img src="img/lock.png" height="26">
+                </div>
+
+            </div>
+            <div class="col-xs-10">
+                <div class="lg_txt">
+                    <input type="password" class="form-control login-clearBorder" placeholder="请输入密码" id="password" name="password" style="box-shadow:none;">
+                </div>
+            </div>
+            
+        </div>
+<div class="col-xs-12">
+                <div class="lg_r2_forget login-forgetPassword text-right">
+                    <a id="forget_password" onclick="forget_password();" style="color:#83C05E"><span>忘记密码？</span></a>
+                </div>
+            </div>
+
+        <div class="row clear-row-margin">
+            <div class="lg_r4_dx">
+				<span class="col-xs-12 col-sm-12 col-md-12">
+						<button class="btn btn-success btn-lg col-xs-12 col-sm-12 col-md-12 login-margin-top" id="Login" onclick="Login()">登录</button>
+					</span>
+            </div>
+
+        </div>
+
+        <div class="row clear-row-margin">
+            <div class="lg_r4_dx">
+                <div class="col-xs-12">
+                    <div class="lg_r3_nav text-center login-forgetPassword">
+						<span class="orderConfirm-font-color">
+								其他登录方式
+						</span>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="nav-login img" id="login_wx">
+                        <img src="img/weixin.png">
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="nav-login img" id="login_qq">
+                        <img src="img/QQ.png">
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="nav-login img" id="login_weibo">
+                        <img src="img/weibo.png">
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="nav-login img" id="login_zhifubao">
+                        <img src="img/zhifubiao.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+    var register = function() {
+        loadmain1({
+            action: 'shop_reg',
+            upd: {
+            }
+        });
+    }
+    var forget_password = function() {
+        loadmain1({
+            action: 'shop_changePassword',
+            upd: {
+            }
+        });
+    }
+    function Login(){
+    	var user = new Object();
+        var timestamp = Date.parse(new Date());
+        var password = $("#password").val() || null;
+        var url = yshurl + "loginv2";
+        user.m = $("#username").val() || null;
+        user.t = timestamp;
+        //对用户名和密码进行非空验证
+        if (!mobileCheck(user.m)) {
+        	ysh_msg('电话号码格式不正确！');
+        	return;
+        }
+        if(password.trim().length<6 || password.trim().length>20){
+        	ysh_msg('密码必须大于6，小于20个字符！');
+        	return;
+        }
+        else {
+            user.ptm = md5(md5(password) + timestamp)
+            user.act = null;
+            user.id = '1' || null;
+            user.back_act = null;
+            user.cookie = document.cookie;
+            getDataList(url, user, function(d) {
+                if (d.state == 0) {
+                    ysh_msg('登陆成功');
+                    userInfo(function(user){                    
+                       loadmain1({action:'Shop_Index'})
+                    })
+                } else {
+                    ysh_msg('登录失败');
+                }
+            });
+        }
+    }
+</script>  

@@ -1,0 +1,31 @@
+.r1-d1{
+	background-color: #659633;margin-bottom: 0;
+}
+.r1-d2{
+	margin-top: 20px;margin-bottom: 20px;
+}
+.r1-d2-img{
+	border-color: #ffffff;border-width: 2px;
+	border-style: solid;border-radius: 50%;
+}
+.r1-d2-p{
+	text-align: center;color: #ffffff;
+}
+.r2-d1{
+	background-color: #4c6b2c;padding-top: 5px;
+}
+.r2-d2-p{
+	color: #ffffff;text-align: center;
+}
+.r3-d1{
+	padding-top: 20px;
+}
+.r3-d2{
+	margin-top: 10%;margin-bottom: 10%;
+}
+.r3-d2-img{
+	width: 40%;
+}
+.r3-d2-p{
+	text-align: center;
+}

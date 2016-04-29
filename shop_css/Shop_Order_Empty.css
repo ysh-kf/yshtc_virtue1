@@ -1,0 +1,27 @@
+.r1-div{
+	margin:20px;margin-bottom:0;text-align: center;
+}
+.r1-div-img{
+	width: 80%;height: auto;
+}
+.r1-p{
+	text-align: center;
+}
+.r1-p-btn{
+	padding: 0;
+}
+.r2-img{
+	width: 100%;height: auto;
+}
+.r2-p{
+	border-left: 8px solid #87C644;color: #87C644;padding-left: 10px;padding-top: 10px;
+}
+.r2-div{
+	padding-bottom: 10px;
+}
+.red-color{
+	color: red;
+}
+.r3-img{
+	width: 100%;height: auto;
+}

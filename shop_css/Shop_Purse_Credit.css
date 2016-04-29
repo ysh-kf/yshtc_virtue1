@@ -1,0 +1,48 @@
+.credit-r1{
+	margin-top: 10px;margin-bottom: 10px;
+}
+.credit-r1-d1{
+	padding-top: 40px;padding-bottom: 40px;background-color: #999999;
+}
+.credit-r1-d1-p1{
+	text-align: center;
+}
+.credit-r1-d1-p1-span1{
+	font-size: 5rem;
+}
+.credit-r1-d1-p1-span2{
+	font-size: 2rem;
+}
+.credit-r2{
+	margin-bottom: 60px;
+}
+.credit-r3-btn1{
+	border-right: 1px solid #ffffff;font-size: 3rem;
+}
+.credit-r3-btn2{
+	border-left: 1px solid #ffffff;font-size: 3rem;
+}
+.credit-r4{
+	margin: 20px;border-bottom: 1px solid #E5E5E5;margin-bottom: 0;padding-bottom: 10px;
+}
+.credit-r4-d1-btn1{
+	background: none;border: none;padding-left: 0;
+}
+.credit-r5{
+	margin: 20px;border-bottom: 1px solid #E5E5E5;margin-bottom: 0;padding-bottom: 10px;
+}
+.credit-r5-d1-p1{
+	margin-bottom: 0;
+}
+.credit-r5-d1-p2{
+	margin-bottom: 0;
+}
+.credit-r5-d1-p2-span1{
+	color: #A0A0A0;font-size: 0.5rem;
+}
+.credit-r5-d2{
+	text-align: right;
+}
+.red-color{
+	color: red;
+}

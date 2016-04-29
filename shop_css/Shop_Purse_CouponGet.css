@@ -1,0 +1,24 @@
+#couponList .coupon-row{
+	margin:10px;position: relative;
+}
+#couponList .coupon-row-img{
+	width: 100%;height: auto;
+}
+#couponList .coupon-row-p1{
+	position: absolute;top: 45%;left: 10%;transform: translateY(-50%);color: #ffffff;
+}
+#couponList .coupon-row-p1-span1{
+	font-size: 4rem;
+}
+#couponList .coupon-row-p1-span2{
+	font-size: 0.5rem;
+}
+#couponList .coupon-row-p1-span3{
+	display: block;position: absolute;width: 58px;top: 0;right: 0;
+}
+#couponList .coupon-row-p2{
+	position: absolute;bottom: 0;left: 8%;color: #ffffff;margin-bottom: 0;
+}
+#couponList .coupon-row-p3{
+	position: absolute;right: 8%;top: 50%;transform: translateY(-50%);color: #ffffff;width:1rem;font-size: 1rem;
+}

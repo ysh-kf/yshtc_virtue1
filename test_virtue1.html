@@ -1,0 +1,62 @@
+
+<script type="text/html" id="main"> 
+	{{d.msg}}
+	
+	<div id="aaa">
+		我是模板里的东西11111
+	</div>
+	<div id="bbb"></div>
+	<script >
+
+		datas.ready=function(){
+			alert("fdjlk");
+
+
+			getDataList(yshurl+'getlog',{id:100},function (d){
+				laytpl($("#b").html()).render(d,function(html){
+
+					$("#bbb").append(html);
+				});
+			});
+
+
+
+		}
+
+		</script>
+</script>
+
+
+<script type="text/html" id="b">
+		我是B里面的东西
+<!--{{d.aaData[0]['ShortMessage']}}-->
+		</script>
+
+<script type="text/html" id="a2"> 
+	我是A2里面的东西
+	<!--{{d.aaData[0]['ShortMessage']}}-->
+</script>
+
+<script type="text/html" id="a3">
+	hello 45444
+	{{d.aaData[0]['ShortMessage']}}
+</script>
+
+<script type="text/html" id="a4">
+	hello 45444
+	{{d.aaData[0]['ShortMessage']}}
+</script>
+	
+	<script>
+		$(document).ready(function(){
+			getDataList(yshurl+'getlog',{id:100},function (d){
+				laytpl($("#a2").html()).render(d,function(html){
+					
+					$("#aaa").append(html);						
+				});
+			});
+
+		
+		})
+			
+	</script>

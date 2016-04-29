@@ -1,0 +1,379 @@
+
+
+/*-------------------------------------------王云夫------------------------------------------*/
+/*导航栏样式开始*/
+
+.header-box{
+    /*background: #72B943;*/
+    height:4.5rem;
+    line-height:4.5rem;
+    font-size: 1.6rem;
+}
+.header-box>div:nth-child(2){
+    text-align: right;
+    font-size: 1.4rem;
+}
+
+/*导航栏样式结束*/
+
+/*导航栏菜单样式开始*/
+.nav-list{
+    font-size: 1.2rem;
+    line-height: 4.5rem;
+    border-bottom: 2px solid #72B943;
+    background: #ffffff;
+}
+.nav-list>div{
+    padding:0;
+    text-align: center;
+    border-right: 1px solid #cccccc;
+}
+.nav-list>div:last-child{
+    border-right:0;
+}
+.nav-list>div>span:last-child{
+    color: #FF0303;
+}
+.nav-list img{
+    width:1.6rem;
+    height:1.6rem;
+}
+/*导航栏菜单样式结束*/
+
+
+/*消费金额开始*/
+.consume-box-sty{
+    line-height:4.0rem;
+    text-align: right;
+    background: #E5E5E5;
+}
+/*消费金额结束*/
+
+/*待确认订单列表样式*/
+.list-box{
+    background: #ffffff;
+}
+
+.list-box>div{
+    padding:1rem .5rem;
+    height: 10rem;
+    border-bottom: 1px solid #E4E4E4;
+}
+.list-box>div:first-child{
+    border:0;
+}
+.img-box img{
+    max-width:100%;
+    height:auto;
+}
+.dis-tab{
+    display: table;
+    height:100%;
+    width:100%;
+}
+.dis-tab-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+.msg-box>div{
+    line-height:1.8;
+}
+.operation-box{
+    text-align: left;
+    padding:0!important;
+}
+.operation-box .dis-tab-cell>div:last-child{
+    position: relative;
+}
+.operation-box h4{
+    display: inline-block;
+}
+.operation-box button{
+    border-radius: 1.5rem;
+}
+.right-icon{
+    position: absolute;
+    top:-1.2rem
+}
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+/*待确认订单列表样式*/
+
+
+/*-------------------------------------------王云夫结束------------------------------------------*/
+
+
+
+
+/**
+ * 第一组组件样式区
+ */
+
+.gr_box {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid darkgray;
+}
+
+.gr_box>div:first-child {
+    line-height: 4.5rem;
+}
+
+.gr_box .icon {
+    width: 3rem;
+}
+
+.gr_box2 {
+    text-align: right;
+    padding-right: 1rem;
+    line-height: 4.5rem;
+}
+
+.header_icon {
+    width: 2rem;
+}
+
+.img_go {
+    width: 1rem;
+}
+
+.BottonHeight {
+    height: 0.1rem;
+}
+
+
+/*
+ * END
+ */
+
+
+/*
+ * 第三组组件样式区
+ */
+/*王云夫 2016.3.30：导航菜单begi*/
+.nav-fldh{
+    padding:1rem;
+    line-height:3rem;
+    background-color: white;
+}
+.nav-fldh>div{
+    padding:0;
+    text-align: center;
+}
+.nav-fldh>div:last-child{
+    border-right:0;
+
+}
+.nav-fldh>div>span:last-child{
+    color:#282828;
+}
+.nav-fldh img{
+    width:4rem;
+    height:4rem;
+}
+/*王云夫 2016.3.30：导航菜单begi*/
+
+/*王云夫 2016.3.30：标题“最新订购”*/
+.biaoti-box{
+    width: 100%;
+}
+.biaoti-box span{
+    width:6rem;
+    line-height:4rem;
+    background-color: #72B943;
+    border-radius: 0 2rem 2rem 0;
+    padding:0.8rem;
+    color:white;
+}
+/*王云夫 2016.3.30：标题“最新订购”end*/
+
+/*王云夫 2016.3.30：欢迎光临源生汇*/
+.consume-box{
+    line-height:4.0rem;
+    text-align:left;
+    background: #E5E5E5;
+}
+.consume-box .bhygl{
+    color: #ff784f;background-color:white; font-size: 1.2rem;
+}
+.consume-box.bhygl img{
+    width:4px;
+}
+/*王云夫 2016.3.30：欢迎光临源生汇end*/
+
+/*王云夫 2016.3.30：销量列表*/
+.lb-box>div{
+    padding:1rem .5rem;
+    overflow: hidden;
+    background-color: #FFFFFF;
+}
+.xiaol-box{
+    text-align:center;
+    background-color: white;
+    margin: 0;
+}
+.xiaol-box .lib_box{
+    list-style-type:none;
+}
+.border-right{
+    border-right: 1px solid darkgray;
+}
+/*王云夫 2016.3.30：销量列表end*/
+
+/*王云夫 2016.3.30：底部导航*/
+
+.dbdh-fixed{
+    bottom:0;
+    left:0;
+    z-index:9999;
+}
+
+.dbdh_box{
+    position: fixed;
+    bottom:0;
+    left:0;
+    height:6rem;
+    background-color: white;
+    line-height:4.5rem;
+    padding: 0;
+    margin: 0;
+    z-index: 9999;
+}
+.dbdh_box .dhgn_box{
+    width: 18%;
+    line-height:2.4rem;
+    list-style-type: none;
+    float: left;
+    margin-left:0.5rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+.dbdh_box .dhgn_box img{
+    width:2rem;
+}
+.dbdh_box .dhgn_box span{
+    font-size:1.2rem;
+}
+/*王云夫 2016.3.30：底部导航end*/
+/*
+ * 王云夫 2016.3.30：第三组组件样式区The end
+ */
+
+/**
+ * 第四组组件样式区
+ */
+
+
+/*作者：邓  时间：2016-03-29 描述：呼叫小源-row1*/
+
+.hjxy_r1 {
+    margin: 0.5rem 1.5rem;
+}
+
+.hjxy_r1>div>div:first-child {
+    text-align: center;
+}
+
+.hjxy_r1>div>div:first-child img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.hjxy_r1>div>div:last-child {
+    margin-top: 1.5rem;
+}
+
+.hjxy_r1_phone {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+
+/*作者：邓  时间：2016-03-29 描述：呼叫小源-row1 END*/
+
+
+/*作者：邓  时间：2016-03-30 描述：呼叫小源-row2*/
+
+.hjxy_r2 {
+    margin: 0.5rem 1.5rem;
+}
+
+.hjxy_r2>div>div:first-child {
+    text-align: center;
+}
+
+.hjxy_r2>div>div:first-child img {
+    width: 8rem;
+    height: 8rem;
+}
+
+.hjxy_r2>div>div:last-child {
+    margin-top: 1.5rem;
+}
+
+.hjxy_r2_QQ {
+    font-size: x-large;
+    font-weight: 400;
+}
+
+
+/*作者：邓  时间：2016-03-30 描述：呼叫小源-row2 END*/
+
+
+/*作者：邓  时间：2016-03-30 描述：呼叫小源-row3*/
+
+.hjxy_r3 {
+    text-align: center;
+}
+
+.hjxy_r3>img {
+    width: 13rem;
+    height: 13rem;
+}
+
+
+/*作者：邓  时间：2016-03-30 描述：呼叫小源-row3 END*/
+
+/**
+ * 消息组件
+ */
+.msg-notify-content{ padding: .3rem 0;}
+.msg-notify-img{margin: 30% 30%; width: 1.5rem;}
+.msg-notify-title{font-size: 1.8rem;}
+.msg-notify-time{float:right; margin: .2rem 1rem;}
+.msg-notify-body{white-space: nowrap;overflow: hidden; text-overflow: ellipsis; margin-right: 1rem; color: #6D6D6D;}
+.msg-notify-split{border-bottom: .1rem #ccc solid;margin-bottom: .3rem;}
+.msg-notify-bgcolor{background-color: #FFFFFF;}
+.msg-notify-noheight{ min-height: 0rem;}
+
+/**
+ * 帮助组件
+ */
+.help-box{margin: 1.2rem .8rem; border-radius: .5rem; border: .1rem #CCCCCC solid;width:90%;margin: auto;}
+.help-box-header{text-align: center; padding: .2rem 0; background-color: #EFEFEF; border-radius: .5rem .5rem 0 0 ; border-bottom: .1rem #CCCCCC solid; }
+.help-box-header-text{margin: 1rem; background-color:#EFEFEF ; color: #A1A1A1;}
+.help-box-body{background-color: #FFFFFF; padding: 1.5rem 1rem; border-radius: 0 0 .5rem .5rem ;}
+.help-box-body-item{margin: .2rem;}
+.help-box-body-img{width: 2.4rem; height: 2.4rem; margin: -.1rem 1rem 0 0;}
+.help-box-body-text-ellisis{white-space: nowrap;overflow: hidden; text-overflow: ellipsis;color: #949494;}
+
+/**
+ * 第四组组件样式END
+ */
+
+
+/*
+作者：shiyuwei
+说明：评价列表
+*/
+.comment-item .red{color: red}
+.comment-item{border-bottom: 1px solid #e5e5e5;padding: 2rem 1rem 1rem 1rem; background: #fff;margin-top: 0;}
+.comment-item:last-child{border-bottom: none;}
+.comment-item .fr{float: right;color:#8891a2;}
+.comment-item .media-heading{color:#8891a2;}
+.comment-item .star{padding: 0rem 0 1rem 0;width: 12rem;}
+.comment-item .media-body p{color:#000;}
+

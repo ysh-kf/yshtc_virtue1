@@ -1,0 +1,211 @@
+<script id="main" type="text/html">
+<form id="submit-reg">
+    <div class="row">
+        <div id="template_container" temp="2" class="col-xs-12 tool-container-no-bottom col-sm-6 col-md-6 col-lg-4">
+            <div class="row clear-row-margin">
+                <div class="col-xs-12 col-sm-12 col-md-12 zhj_box">
+                    <ul class="hu_zx">
+                        <li class="srx_1">
+                            <span class="col-xs-1 col-sm-1 col-md-1"><img src="img/phone.png" style="height: 20px;"></span>
+							<span class="col-xs-11 col-sm-11 col-md-11">
+					<input type="text" class="form-control" id="username" name="username" placeholder="请输入你的手机号码" style="border:0px;">
+				</span>
+                        </li>
+                        <li class="srx_1">
+                            <span class="col-xs-1 col-sm-1 col-md-1"><img src="img/phone.png" style="height:  20px;"></span>
+							<span class="col-xs-11 col-sm-11 col-md-11">
+					<div class="tb_1">
+                        <input type="text" class="form-control" id="identifyingCode" placeholder="请输入短信验证码" style="border:0px;">
+                    </div>
+					<div class="tb_2"><button type="button" id="btn-yzm" class="btn min btn-bg"  onclick="getidentifyingCode();">获取验证码</button> </div>
+				</span>
+                    </li>
+                        <li class="srx_1">
+                            <span class="col-xs-1 col-sm-1 col-md-1"><img src="img/lock.png" style="height:  20px;"></span>
+							<span class="col-xs-11 col-sm-11 col-md-11">
+					<input type="password" class="form-control" id="password" name="password" placeholder="输入登录密码" style="border:0px;">
+						</span>
+                        </li>
+                        <li class="srx_1">
+                            <span class="col-xs-1 col-sm-1 col-md-1"><img src="img/lock.png" style="height: 20px;"></span>
+							<span class="col-xs-11 col-sm-11 col-md-11">
+							<input type="password" class="form-control" id="password_confirm" placeholder="请确认登录密码" style="border:0px;">
+						</span>
+                            <div class="tos">密码由6-20位英文字母、数字或符号组成</div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row clear-row-margin">
+                <div class="col-xs-2 col-sm-2 col-md-2">
+                    <div class="lg_r2_ck">
+                        <img src="img/ck.png" class="img_choose" value="1" onclick="img_choose();">
+                    </div>
+                </div>
+                <div class="col-xs-10 col-sm-10 col-md-10">
+                    <div class="lg_r2_xy" onclick='loadAgreement()'>
+                        我已阅读并同意<a><span>《用户服务协议》</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-success btn-block navbar-fixed-bottom" id="btn_reg">注册</button>
+</form>
+
+<script>
+    datas.ready = function(){
+        pageReady();
+    }
+</script>
+
+</script>
+
+<script type="text/javascript">
+function pageReady(){
+    if (datas.params.upd.act == "get_password") {
+                $("#btn_reg").text('确认');
+        }
+        $("#btn-yzm").click(function (){
+            $(".btn-yzm").disable();
+        })
+        $('#submit-reg').bootstrapValidator({
+           message: '此输入无效',
+            live: 'disabled',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                username: {
+                    validators: {
+                        notEmpty: {
+                            message: '请输入登录账号'
+                        },
+                        regexp:{
+                            regexp:/^1[3|4|5|7|8][0-9]{9}$/,
+                            message:'请输入正确的手机号码'
+                        }
+                    },
+                    remote: {
+                            message: '手机号码重复',
+                            url: yshurl+"checkPhoneNum"
+                        }
+                },
+                password: {
+                    validators: {
+                        notEmpty: {
+                            message: '请输入您的密码'
+                        },
+                        stringLength:{
+                            min:6,
+                            max:20,
+                            message:'密码必须大于6，小于20个字符'
+                        }
+                    }
+                }
+            }
+        }).on('success.form.bv', function (e) {
+            e.preventDefault();
+            ysh_regist();
+            $("#btn_reg").attr("disabled", true);
+        });
+            //获取验证码
+function getidentifyingCode() {
+    var wait = 60;
+    function time(o) {
+        if (wait == 0) {
+            $(o).removeAttr("disabled");
+            $(o).html("获取验证码");
+            wait = 60;
+        } else {
+            $(o).attr("disabled", true);
+            $(o).html("重新发送(" + wait + ")");
+            wait--;
+            setTimeout(function () {
+                        time(o)
+                    },
+                    1000)
+        }
+    }
+    user = getformdata();
+    if (!user.m || user.m.length != 11) {
+        ysh_msg('手机号格式错误');
+        return;
+    }
+    var url = yshurl+ "getSms";
+    getDataList(url, {
+        m: user.m
+    }, function(rdata) {
+        ysh_msg('发送成功！');
+        time($("#btn-yzm"));
+    });
+}
+//注册
+function register() {
+    if ($("#password").val() != $("#password_confirm").val()) {
+     ysh_msg('登录密码与确认密码不一致');
+    } 
+}
+var action = datas.params.upd.act;
+//请求注册或请求找回密码
+var getformdata = function() {
+    var username = $("#username").val() || null;
+    var password = $("#password").val() || null;
+    var identifyingCode = $("#identifyingCode").val() || null;
+    var mcmd5 = null;
+    var pmd5 = null;
+    if (identifyingCode && username && password) {
+        mcmd5 = md5(username + identifyingCode);
+    }
+    if (password) pmd5 = md5(password);
+    var user = {
+        m: username,
+        pmd5: pmd5,
+        mcmd5: mcmd5,
+        cookie: document.cookie
+    }
+    return user;
+}
+var ysh_regist = function() {
+    let url = yshurl+ "regist";
+    if (action == "get_password") {
+        url = yshurl+ "set_password";
+    };    
+    getDataList(url,getformdata(),function(ret){
+        if(ret  && ret .state == 0){
+            ysh_msg("注册成功");
+            getDataList(yshurl+"login",getformdata(), function (ret) {
+                if(ret && ret.start == 0){
+                    loadmain1("Shop_Index");
+                }else{
+                    loadmain1("Shop_login");
+                }
+            },true);
+        }else{
+            ysh_msg("注册失败");
+            $("#btn_reg").attr("disabled", false);
+        }
+    })
+}
+
+var img_choose = function() {
+    if ($('.img_choose').attr('src') == 'img/icon/ck.png') {
+        $('.img_choose').attr('src', 'img/icon/unck.png');
+        $('.img_choose').attr('value', '1');
+        $("#Login").addClass('disabled');
+    } else {
+        $('.img_choose').attr('src', 'img/icon/ck.png');
+        $('.img_choose').attr('value', '0');
+        $("#Login").removeClass('disabled');
+    }
+}
+
+var loadAgreement = function(){
+    loadmain1({action:"TC_RegistrationAgreement",upd:{}});
+}
+}
+
+
+</script>  

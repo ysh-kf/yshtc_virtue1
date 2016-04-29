@@ -1,0 +1,30 @@
+.checkBars-row{
+	text-align: center;padding: 20px;
+}
+.couponList-r1-d1{
+	margin:10px;position: relative;
+}
+.couponList-r1-d1-img{
+	width: 100%;height: auto;
+}
+.couponList-r1-d1-p1{
+	position: absolute;top: 10%;right: 10%;
+}
+.couponList-r1-d1-p1-span1{
+	font-size: 3rem;
+}
+.couponList-r1-d1-p1-span2{
+	float: right;
+}
+.couponList-r1-d1-p2{
+	position: absolute;bottom: 10%;left: 8%;color: #A0A0A0;margin-bottom: 0;
+}
+.couponList-r2{
+	margin-top: 30px;
+}
+.couponList-r2-d1{
+	position: relative;background-color: #A0A0A0;height: 1px;width: 98%;margin:0 auto;
+}
+.couponList-r2-d1-p1{
+	position: absolute;z-index: 2;left: 50%;top:-10px;background-color: #E5E5E5;transform: translate(-50%);
+}
